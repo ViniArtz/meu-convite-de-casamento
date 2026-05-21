@@ -1,0 +1,143 @@
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.bgPhoto {
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-url);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  filter: grayscale(10%);
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(250, 248, 245, 0.58) 0%, rgba(245, 240, 232, 0.62) 100%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoWrapper {
+  margin-bottom: 24px;
+}
+
+.logoImg {
+  width: clamp(80px, 16vw, 130px);
+  display: block;
+  margin: 0 auto;
+}
+
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #8b7355;
+  margin-bottom: 32px;
+}
+
+.nameFirst {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.8rem, 5vw, 3.8rem);
+  font-weight: 400;
+  color: #2c1810;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.ornamentWrap {
+  margin: 8px 0;
+}
+
+.ampersand {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.1rem, 2.8vw, 1.7rem);
+  letter-spacing: 0.25em;
+  color: #bea56c;
+  margin: 4px 0;
+}
+
+.nameLast {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.8rem, 5vw, 3.8rem);
+  font-weight: 400;
+  color: #2c1810;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.dateBadge {
+  border: 1px solid #bea56c;
+  padding: 18px 52px;
+  display: inline-block;
+  position: relative;
+}
+
+.dateDot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #bea56c;
+  border-radius: 50%;
+}
+
+.dotTL { top: -6px;  left: -6px;  }
+.dotTR { top: -6px;  right: -6px; }
+.dotBL { bottom: -6px; left: -6px;  }
+.dotBR { bottom: -6px; right: -6px; }
+
+.dateText {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  color: #2c1810;
+  letter-spacing: 0.18em;
+  font-weight: 400;
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #8b7355;
+  letter-spacing: 0.12em;
+  font-style: italic;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 36px;
+  left: 0;
+  right: 0;
+  width: max-content;
+  margin: 0 auto;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #bea56c;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, transparent, #bea56c);
+}
