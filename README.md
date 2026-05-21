@@ -1,16 +1,103 @@
-# React + Vite
+# Eloizy & Vinicius — Convite Digital
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Convite de casamento digital estático, construído com React + Vite. Sem backend, sem gerenciamento de lista de convidados — apenas a experiência do convite com links externos para RSVP e lista de presentes.
 
-Currently, two official plugins are available:
+**Data:** 16 de Julho de 2026 · Quinta-feira · 17h00
+**Local:** Coco Bambu Meireles — Fortaleza, Ceará
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Tecnologia | Versão | Uso |
+|---|---|---|
+| React | 19 | UI |
+| Vite | 8 | Build / dev server |
+| framer-motion | 12 | Animações de entrada, scroll, flip e hover |
+| react-intersection-observer | 10 | Scroll-triggered animations |
+| lucide-react | 1 | Ícones |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Estrutura
+
+```
+src/
+├── assets/
+│   ├── SVG/
+│   │   ├── Logo do Casal.svg        # Monograma E&V
+│   │   └── Logo nome casal.svg      # Logo com nomes completos
+│   ├── fundo-capa.png               # Foto de fundo das seções de capa
+│   └── Foto- fundo-local.png        # Foto de fundo da seção de local
+├── components/
+│   ├── OpeningScreen.jsx            # Tela de entrada — desliza para cima ao toque
+│   ├── HeroSection.jsx              # Seção principal com nomes, data e logo
+│   ├── HeroSection.module.css
+│   ├── CountdownSection.jsx         # Contador regressivo com flip animado
+│   ├── DetailsSection.jsx           # Cards: data, horário, local, traje
+│   ├── LocationSection.jsx          # Endereço com botão "Ver no Mapa"
+│   ├── LinksSection.jsx             # Botões RSVP e lista de presentes
+│   ├── Footer.jsx                   # Rodapé com nome do casal e data
+│   └── FloatingPetals.jsx           # Pétalas flutuantes decorativas (fixed)
+├── Fonts/
+│   └── cinzel/                      # Fontes locais OTF (Cinzel + Cinzel Decorative)
+├── App.jsx
+├── main.jsx
+└── index.css                        # Variáveis CSS, @font-face, reset global
+```
+
+---
+
+## Paleta de cores
+
+| Variável | Hex | Uso |
+|---|---|---|
+| `--gold` | `#bea56c` | Cor principal da identidade visual |
+| `--gold-light` | `#ddc898` | Destaques suaves |
+| `--gold-dark` | `#8a7040` | Variação escura |
+| `--ivory` | `#f5f0e8` | Fundos secundários |
+| `--cream` | `#faf8f5` | Background global |
+| `--dark` | `#2c1810` | Textos principais |
+| `--muted` | `#8b7355` | Textos secundários |
+
+---
+
+## Tipografia
+
+- **Cinzel Decorative** — nomes do casal, títulos principais (local, OTF)
+- **Playfair Display** — datas, subtítulos (Google Fonts)
+- **Cormorant Garamond** — textos corridos, taglines (Google Fonts)
+
+---
+
+## Links externos
+
+| Destino | Constante | Arquivo |
+|---|---|---|
+| Confirmação de presença | `RSVP_URL` | `LinksSection.jsx` |
+| Lista de presentes | `GIFTS_URL` | `LinksSection.jsx` |
+| Google Maps | `MAPS_URL` | `LocationSection.jsx` |
+
+---
+
+## Comandos
+
+```bash
+# Instalar dependências
+npm install
+
+# Servidor de desenvolvimento
+npm run dev
+
+# Build de produção
+npm run build
+
+# Preview do build
+npm run preview
+```
+
+---
+
+## Deploy
+
+O projeto gera arquivos estáticos em `dist/` e pode ser hospedado em qualquer CDN ou serviço de hospedagem estática (Vercel, Netlify, GitHub Pages, etc.).
