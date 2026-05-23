@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import LoadingScreen from './components/LoadingScreen'
 import OpeningScreen from './components/OpeningScreen'
 import FloatingPetals from './components/FloatingPetals'
 import PhotoSection from './components/PhotoSection'
@@ -11,12 +12,28 @@ import LinksSection from './components/LinksSection'
 import Footer from './components/Footer'
 
 function App() {
+  const [loaded, setLoaded] = useState(false)
   const [opened, setOpened] = useState(false)
+
+  useEffect(() => {
+    const minDelay = new Promise((resolve) => setTimeout(resolve, 1500))
+    const windowLoad = new Promise((resolve) => {
+      if (document.readyState === 'complete') resolve()
+      else window.addEventListener('load', resolve, { once: true })
+    })
+    Promise.all([minDelay, windowLoad]).then(() => setLoaded(true))
+  }, [])
 
   return (
     <>
       <AnimatePresence>
-        {!opened && <OpeningScreen key="opening" onComplete={() => setOpened(true)} />}
+        {!loaded && <LoadingScreen key="loading" />}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {loaded && !opened && (
+          <OpeningScreen key="opening" onComplete={() => setOpened(true)} />
+        )}
       </AnimatePresence>
 
       <AnimatePresence>

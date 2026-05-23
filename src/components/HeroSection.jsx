@@ -63,7 +63,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 1.3 }}
           className={styles.tagline}
         >
-          convidam você a celebrar<br />a união de suas vidas
+          convidam você para o seu casamento
         </motion.p>
 
         <motion.div

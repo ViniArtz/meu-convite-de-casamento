@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import fundoCapa from '../assets/fundo-capa.png'
+import fundoCapa from '../assets/fundo-capa-2.png'
 import styles from './OpeningScreen.module.css'
 
 export default function OpeningScreen({ onComplete }) {
@@ -20,22 +20,22 @@ export default function OpeningScreen({ onComplete }) {
       className={styles.wrapper}
       onClick={handleOpen}
     >
-      <div className={styles.bgPhoto} style={{ '--bg-url': `url(${fundoCapa})` }} />
+      <div className={styles.bgPhoto} style={{ '--bg-url': 'url(' + fundoCapa + ')' }} />
       <div className={styles.bgOverlay} />
 
-      <svg className={`${styles.corner} ${styles.cornerTL}`} width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <svg className={styles.corner + ' ' + styles.cornerTL} width="60" height="60" viewBox="0 0 60 60" fill="none">
         <path d="M4 56 L4 4 L56 4" stroke="#bea56c" strokeWidth="0.8" opacity="0.5" />
         <circle cx="4" cy="4" r="3" fill="#bea56c" opacity="0.4" />
       </svg>
-      <svg className={`${styles.corner} ${styles.cornerTR}`} width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <svg className={styles.corner + ' ' + styles.cornerTR} width="60" height="60" viewBox="0 0 60 60" fill="none">
         <path d="M4 56 L4 4 L56 4" stroke="#bea56c" strokeWidth="0.8" opacity="0.5" />
         <circle cx="4" cy="4" r="3" fill="#bea56c" opacity="0.4" />
       </svg>
-      <svg className={`${styles.corner} ${styles.cornerBL}`} width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <svg className={styles.corner + ' ' + styles.cornerBL} width="60" height="60" viewBox="0 0 60 60" fill="none">
         <path d="M4 56 L4 4 L56 4" stroke="#bea56c" strokeWidth="0.8" opacity="0.5" />
         <circle cx="4" cy="4" r="3" fill="#bea56c" opacity="0.4" />
       </svg>
-      <svg className={`${styles.corner} ${styles.cornerBR}`} width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <svg className={styles.corner + ' ' + styles.cornerBR} width="60" height="60" viewBox="0 0 60 60" fill="none">
         <path d="M4 56 L4 4 L56 4" stroke="#bea56c" strokeWidth="0.8" opacity="0.5" />
         <circle cx="4" cy="4" r="3" fill="#bea56c" opacity="0.4" />
       </svg>
@@ -61,9 +61,7 @@ export default function OpeningScreen({ onComplete }) {
           transition={{ duration: 1, delay: 0.8 }}
           className={styles.title}
         >
-          Eloizy{' '}
-          <span className={styles.titleAmpersand}>&amp;</span>
-          {' '}Vinicius
+          Eloizy <span className={styles.titleAmpersand}>&amp;</span> Vinicius
         </motion.h1>
 
         <motion.p
@@ -82,7 +80,6 @@ export default function OpeningScreen({ onComplete }) {
           className={styles.cta}
         >
           <div className={styles.ctaLine} />
-
           <motion.div
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2.5, repeat: Infinity }}

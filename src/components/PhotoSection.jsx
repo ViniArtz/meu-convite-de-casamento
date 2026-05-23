@@ -16,7 +16,7 @@ export default function PhotoSection() {
           inset: 0,
           backgroundImage: `url(${fundoCapa})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 20%',
+          backgroundPosition: 'center center',
         }}
       />
 

@@ -4,11 +4,11 @@ import { Calendar, Clock, MapPin, Shirt } from 'lucide-react'
 
 const DETAILS = [
   { icon: Calendar, label: 'Data', value: 'Quinta-feira', sub: '16 de Julho de 2026' },
-  { icon: Clock, label: 'Horário', value: '17h00', sub: 'Recepção às 17h15' },
+  { icon: Clock, label: 'Horário', value: '17h00', sub: 'Cerimônia às 17h15' },
   { icon: MapPin, label: 'Local', value: 'Coco Bambu Meireles', sub: 'Fortaleza, Ceará' },
   { icon: Shirt, label: 'Traje', value: 'Sport Fino', sub: 'Para os convidados' },
 ]
-
+  
 function DetailCard({ icon: Icon, label, value, sub, index }) {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 })
 

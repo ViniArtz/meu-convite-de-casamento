@@ -137,7 +137,7 @@ export default function LinksSection() {
             marginBottom: '12px',
           }}
         >
-          Sua presença é o nosso maior presente
+          Sua presença é o maior presente que poderíamos receber.
         </motion.h2>
 
         <motion.p
@@ -152,7 +152,7 @@ export default function LinksSection() {
             marginBottom: '16px',
           }}
         >
-          Mas se quiser nos presentear, ficamos muito gratos
+          Mas, se desejarem nos presentear de outra forma, ficaremos imensamente gratos.
         </motion.p>
 
         <motion.div

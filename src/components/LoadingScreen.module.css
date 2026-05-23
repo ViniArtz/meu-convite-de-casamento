@@ -1,0 +1,41 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: linear-gradient(160deg, #faf8f5 0%, #f0e9dc 50%, #faf8f5 100%);
+}
+
+.logo {
+  width: clamp(80px, 16vw, 120px);
+}
+
+.names {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: 400;
+  color: #2c1810;
+  letter-spacing: 0.08em;
+}
+
+.ampersand {
+  color: #bea56c;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #bea56c;
+}
