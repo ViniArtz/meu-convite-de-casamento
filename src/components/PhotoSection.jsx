@@ -29,8 +29,8 @@ export default function PhotoSection() {
           bottom: 0,
           left: 0,
           right: 0,
-          height: '45%',
-          background: 'linear-gradient(to bottom, transparent 0%, #faf8f5 100%)',
+          height: '50%',
+          background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.6) 70%, #faf8f5 100%)',
           pointerEvents: 'none',
         }}
       />
@@ -49,7 +49,7 @@ export default function PhotoSection() {
             textTransform: 'uppercase',
             color: '#bea56c',
             margin: 0,
-            textShadow: '0 0 20px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.6)',
+            textShadow: 'none',
           }}
         >
           Ver o convite
@@ -64,7 +64,7 @@ export default function PhotoSection() {
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.9))' }}
+          style={{ filter: 'none' }}
         >
           <ChevronDown size={26} strokeWidth={2} color="#bea56c" />
         </motion.div>
