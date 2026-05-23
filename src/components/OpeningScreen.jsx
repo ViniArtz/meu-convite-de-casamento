@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import fundoCapa from '../assets/Fundo-Capa-2.png'
+import fundoCapa from '../assets/fundo-capa-2-otimizado.png'
 import styles from './OpeningScreen.module.css'
 
 export default function OpeningScreen({ onComplete }) {

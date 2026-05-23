@@ -1,4 +1,4 @@
-import fundoCapa from '../assets/fundo-capa.png'
+import fundoCapa from '../assets/fundo-capa-otimizado.png'
 
 export default function PhotoSection() {
   return (
