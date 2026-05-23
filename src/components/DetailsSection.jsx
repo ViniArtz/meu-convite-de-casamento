@@ -4,9 +4,9 @@ import { Calendar, Clock, MapPin, Shirt } from 'lucide-react'
 
 const DETAILS = [
   { icon: Calendar, label: 'Data', value: 'Quinta-feira', sub: '16 de Julho de 2026' },
-  { icon: Clock, label: 'Horário', value: '17h00', sub: 'Recepção às 17h30' },
+  { icon: Clock, label: 'Horário', value: '17h00', sub: 'Recepção às 17h15' },
   { icon: MapPin, label: 'Local', value: 'Coco Bambu Meireles', sub: 'Fortaleza, Ceará' },
-  { icon: Shirt, label: 'Traje', value: 'Social', sub: 'Black tie opcional' },
+  { icon: Shirt, label: 'Traje', value: 'Sport Fino', sub: 'Para os convidados' },
 ]
 
 function DetailCard({ icon: Icon, label, value, sub, index }) {
@@ -164,6 +164,24 @@ export default function DetailsSection() {
             <DetailCard key={d.label} {...d} index={i} />
           ))}
         </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          style={{
+            marginTop: '48px',
+            fontFamily: 'Cormorant Garamond, serif',
+            fontSize: '1.3rem',
+            color: '#8b7355',
+            fontStyle: 'italic',
+            letterSpacing: '0.06em',
+          }}
+        >
+          ✦ Pedimos gentilmente que as convidadas evitem usar branco no dia da cerimônia ✦
+          <br /><br />
+          ✦ Para não perder nenhum momento especial, pedimos que os convidados cheguem com antecedência — a cerimônia iniciará pontualmente às 17h00 ✦
+        </motion.p>
       </div>
     </section>
   )

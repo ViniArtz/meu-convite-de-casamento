@@ -39,7 +39,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.4 }}
           className={styles.tagline}
         >
-          Convidamos com alegria para a celebração do nosso amor
+          Com a bênção de Deus e de seus pais
         </motion.p>
 
         <motion.h1
@@ -50,15 +50,6 @@ export default function HeroSection() {
         >
           Eloizy Alves
         </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 0.9, delay: 1.0 }}
-          className={styles.ornamentWrap}
-        >
-          <Ornament />
-        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, scale: 0.7 }}
@@ -99,6 +90,19 @@ export default function HeroSection() {
         >
           Quinta-feira · 17h00 · Fortaleza, CE
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 3.0 }}
+          className={styles.verse}
+        >
+          <div className={styles.verseLine} />
+          <p className={styles.verseText}>
+            "Acima de tudo, porém, revistam-se do amor, que é o elo perfeito."
+          </p>
+          <p className={styles.verseRef}>Colossenses 3:14</p>
+        </motion.div>
       </div>
 
       <motion.div

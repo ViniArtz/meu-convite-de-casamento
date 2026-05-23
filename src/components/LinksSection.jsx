@@ -1,9 +1,10 @@
 ﻿import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Heart, Gift } from 'lucide-react'
+import { Heart, Gift, List } from 'lucide-react'
 
 const RSVP_URL = 'https://noivos.casar.com/eloizy-e-vinicius'
 const GIFTS_URL = 'https://www.querodecasamento.com.br/lista-de-casamento/eloizy-e-Vinicius'
+const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1VOO1JuIstW1pMg4d1ZoG0rWtf6ULYk-40fT8ALPqJd8/edit?gid=0#gid=0'
 
 function ActionCard({ href, icon: Icon, title, subtitle, filled, index }) {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 })
@@ -104,7 +105,7 @@ export default function LinksSection() {
         zIndex: 2,
       }}
     >
-      <div style={{ maxWidth: '780px', margin: '0 auto', textAlign: 'center' }}>
+      <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
 
         <motion.p
           ref={ref}
@@ -189,6 +190,14 @@ export default function LinksSection() {
             subtitle="Presenteie os noivos"
             filled={false}
             index={1}
+          />
+          <ActionCard
+            href={SPREADSHEET_URL}
+            icon={List}
+            title="Nossa Lista"
+            subtitle="Lista personalizada do casal"
+            filled={false}
+            index={2}
           />
         </div>
       </div>

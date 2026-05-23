@@ -84,7 +84,7 @@ export default function OpeningScreen({ onComplete }) {
             fontSize: '0.75rem',
             letterSpacing: '0.3em',
             textTransform: 'uppercase',
-            color: '#8b7355',
+            color: '#5c3d28',
           }}
         >
           Você recebeu um convite especial
@@ -114,7 +114,7 @@ export default function OpeningScreen({ onComplete }) {
           style={{
             fontFamily: 'Playfair Display, serif',
             fontSize: 'clamp(0.9rem, 2vw, 1.1rem)',
-            color: '#8b7355',
+            color: '#5c3d28',
             letterSpacing: '0.12em',
             fontStyle: 'italic',
           }}

@@ -107,10 +107,51 @@ export default function Footer() {
             color: 'rgba(232,213,163,0.45)',
             letterSpacing: '0.12em',
             fontStyle: 'italic',
+            marginBottom: '40px',
           }}
         >
           16 · 07 · 2026 · Fortaleza, Ceará
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.9 }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '10px',
+            maxWidth: '420px',
+            margin: '0 auto',
+          }}
+        >
+          <div style={{ height: '1px', width: '80px', background: 'rgba(190,165,108,0.25)' }} />
+          <p
+            style={{
+              fontFamily: 'Cormorant Garamond, serif',
+              fontSize: 'clamp(0.9rem, 1.8vw, 1.05rem)',
+              color: 'rgba(232,213,163,0.55)',
+              fontStyle: 'italic',
+              letterSpacing: '0.04em',
+              lineHeight: 1.6,
+              textAlign: 'center',
+            }}
+          >
+            "O cordão de três dobras não se rompe com facilidade."
+          </p>
+          <p
+            style={{
+              fontFamily: 'Cormorant Garamond, serif',
+              fontSize: '0.72rem',
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              color: 'rgba(190,165,108,0.5)',
+            }}
+          >
+            Eclesiastes 4:12
+          </p>
+        </motion.div>
       </motion.div>
     </footer>
   )
