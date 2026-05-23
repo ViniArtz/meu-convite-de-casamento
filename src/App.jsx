@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import OpeningScreen from './components/OpeningScreen'
 import FloatingPetals from './components/FloatingPetals'
+import PhotoSection from './components/PhotoSection'
 import HeroSection from './components/HeroSection'
 import CountdownSection from './components/CountdownSection'
 import DetailsSection from './components/DetailsSection'
@@ -27,6 +28,7 @@ function App() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <FloatingPetals />
+            <PhotoSection />
             <HeroSection />
             <CountdownSection />
             <DetailsSection />

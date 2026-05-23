@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import logoCasal from '../assets/SVG/Logo do Casal.svg'
-import fundoCapa from '../assets/fundo-capa.png'
 import styles from './HeroSection.module.css'
 
 const Ornament = () => (
@@ -20,9 +19,6 @@ const ease = [0.25, 0.46, 0.45, 0.94]
 export default function HeroSection() {
   return (
     <section className={styles.section}>
-      <div className={styles.bgPhoto} style={{ '--bg-url': `url(${fundoCapa})` }} />
-      <div className={styles.bgOverlay} />
-
       <div className={styles.content}>
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
