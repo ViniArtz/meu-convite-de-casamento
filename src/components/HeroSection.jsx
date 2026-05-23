@@ -76,7 +76,24 @@ export default function HeroSection() {
           <div className={`${styles.dateDot} ${styles.dotTR}`} />
           <div className={`${styles.dateDot} ${styles.dotBL}`} />
           <div className={`${styles.dateDot} ${styles.dotBR}`} />
-          <p className={styles.dateText}>16 · 07 · 2026</p>
+
+          <div className={styles.dateSide}>
+            <hr className={styles.dateSideHr} />
+            <span className={styles.dateSideText}>17h00</span>
+            <hr className={styles.dateSideHr} />
+          </div>
+
+          <div className={styles.dateCenter}>
+            <span className={styles.dateMonth}>Julho</span>
+            <span className={styles.dateDay}>16</span>
+            <span className={styles.dateYear}>2026</span>
+          </div>
+
+          <div className={styles.dateSide}>
+            <hr className={styles.dateSideHr} />
+            <span className={styles.dateSideText}>Quinta</span>
+            <hr className={styles.dateSideHr} />
+          </div>
         </motion.div>
 
         <motion.p

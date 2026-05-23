@@ -65,43 +65,68 @@
 }
 
 .dateBadge {
-  border: 1px solid #bea56c;
-  padding: 18px 52px;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 36px;
   position: relative;
+  padding: 8px 0;
 }
 
-.dateDot {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #bea56c;
-  border-radius: 50%;
+.dateDot { display: none; }
+.dotTL, .dotTR, .dotBL, .dotBR { display: none; }
+
+.dateSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  min-width: 72px;
 }
 
-.dotTL {
-  top: -6px;
-  left: -6px;
-}
-.dotTR {
-  top: -6px;
-  right: -6px;
-}
-.dotBL {
-  bottom: -6px;
-  left: -6px;
-}
-.dotBR {
-  bottom: -6px;
-  right: -6px;
+.dateSideHr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #5c3d28;
+  margin: 0;
 }
 
-.dateText {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(1.1rem, 3vw, 1.6rem);
-  color: #2c1810;
-  letter-spacing: 0.18em;
+.dateSideText {
+  font-family: "Cinzel", serif;
+  font-size: clamp(0.7rem, 1.6vw, 0.95rem);
+  color: #5c3d28;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.dateCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+}
+
+.dateMonth {
+  font-family: "Cinzel", serif;
+  font-size: clamp(0.65rem, 1.4vw, 0.85rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #5c3d28;
+}
+
+.dateDay {
+  font-family: "Cinzel", serif;
+  font-size: clamp(4.5rem, 10vw, 7rem);
   font-weight: 400;
+  color: #2c1810;
+  line-height: 1;
+}
+
+.dateYear {
+  font-family: "Cinzel", serif;
+  font-size: clamp(0.65rem, 1.4vw, 0.85rem);
+  letter-spacing: 0.3em;
+  color: #5c3d28;
 }
 
 .subtitle {
