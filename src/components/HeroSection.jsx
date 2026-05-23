@@ -39,13 +39,13 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.4 }}
           className={styles.tagline}
         >
-          Com a bênção de Deus e de seus pais
+          Com a bênção de Deus<br />e de seus pais
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, scale: 0.88, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.3, delay: 0.4, ease }}
+          transition={{ duration: 1.3, delay: 0.7, ease }}
           className={styles.nameFirst}
         >
           Eloizy Alves
@@ -68,6 +68,15 @@ export default function HeroSection() {
         >
           Vinicius Teixeira
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.8 }}
+          className={styles.tagline}
+        >
+          convidam você a celebrar<br />a união de suas vidas
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}

@@ -1,0 +1,110 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #faf8f5 0%, #f0e9dc 50%, #faf8f5 100%);
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+}
+
+.bgPhoto {
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-url);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  filter: grayscale(10%);
+  pointer-events: none;
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(250,248,245,0.58) 0%, rgba(245,240,232,0.62) 100%);
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+  z-index: 1;
+}
+
+.cornerTL { top: 24px;    left: 24px;  }
+.cornerTR { top: 24px;    right: 24px; transform: scaleX(-1); }
+.cornerBL { bottom: 24px; left: 24px;  transform: scaleY(-1); }
+.cornerBR { bottom: 24px; right: 24px; transform: scale(-1);  }
+
+.content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #5c3d28;
+}
+
+.title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  font-weight: 400;
+  color: #2c1810;
+  line-height: 1.3;
+}
+
+.titleAmpersand {
+  color: #bea56c;
+  font-weight: 400;
+}
+
+.date {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: #5c3d28;
+  letter-spacing: 0.12em;
+  font-style: italic;
+}
+
+.cta {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ctaLine {
+  height: 1px;
+  width: 120px;
+  background: linear-gradient(to right, transparent, #bea56c, transparent);
+}
+
+.ctaText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #bea56c;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ctaStar {
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
