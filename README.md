@@ -27,17 +27,22 @@ src/
 │   ├── SVG/
 │   │   ├── Logo do Casal.svg        # Monograma E&V
 │   │   └── Logo nome casal.svg      # Logo com nomes completos
-│   ├── fundo-capa.png               # Foto de fundo das seções de capa
+│   ├── fundo-capa.png               # Foto de fundo da OpeningScreen
+│   ├── fundo-capa-2.png             # Foto de fundo alternativa da OpeningScreen
 │   └── Foto- fundo-local.png        # Foto de fundo da seção de local
 ├── components/
+│   ├── LoadingScreen.jsx            # Tela de carregamento — aguarda window.load + 1.5s
+│   ├── LoadingScreen.module.css
 │   ├── OpeningScreen.jsx            # Tela de entrada — desliza para cima ao toque
-│   ├── HeroSection.jsx              # Seção principal com nomes, data e logo
+│   ├── OpeningScreen.module.css
+│   ├── PhotoSection.jsx             # Foto full-bleed com fade para o Hero
+│   ├── HeroSection.jsx              # Nomes, data, versículo e logo — animações scroll-triggered
 │   ├── HeroSection.module.css
 │   ├── CountdownSection.jsx         # Contador regressivo com flip animado
-│   ├── DetailsSection.jsx           # Cards: data, horário, local, traje
+│   ├── DetailsSection.jsx           # Cards: data, horário, local, traje + avisos
 │   ├── LocationSection.jsx          # Endereço com botão "Ver no Mapa"
-│   ├── LinksSection.jsx             # Botões RSVP e lista de presentes
-│   ├── Footer.jsx                   # Rodapé com nome do casal e data
+│   ├── LinksSection.jsx             # Botões RSVP e listas de presentes
+│   ├── Footer.jsx                   # Rodapé com nome do casal e versículo
 │   └── FloatingPetals.jsx           # Pétalas flutuantes decorativas (fixed)
 ├── Fonts/
 │   └── cinzel/                      # Fontes locais OTF (Cinzel + Cinzel Decorative)
@@ -45,6 +50,18 @@ src/
 ├── main.jsx
 └── index.css                        # Variáveis CSS, @font-face, reset global
 ```
+
+---
+
+## Fluxo de telas
+
+```
+LoadingScreen → OpeningScreen → site principal
+```
+
+1. **LoadingScreen** — exibida enquanto os assets carregam (`Promise.all` com mínimo de 1,5s). Logo do casal pulsando + nome + três pontos animados.
+2. **OpeningScreen** — tela de boas-vindas com foto de fundo. Desliza para cima ao toque/clique.
+3. **Site principal** — `PhotoSection` → `HeroSection` → `CountdownSection` → `DetailsSection` → `LocationSection` → `LinksSection` → `Footer`.
 
 ---
 
@@ -74,9 +91,18 @@ src/
 
 | Destino | Constante | Arquivo |
 |---|---|---|
-| Confirmação de presença | `RSVP_URL` | `LinksSection.jsx` |
-| Lista de presentes | `GIFTS_URL` | `LinksSection.jsx` |
-| Google Maps | `MAPS_URL` | `LocationSection.jsx` |
+| Confirmação de presença (casar.com) | `RSVP_URL` | `LinksSection.jsx` |
+| Lista de presentes (querodecasamento) | `GIFTS_URL` | `LinksSection.jsx` |
+| Lista personalizada (Google Sheets) | `SHEET_URL` | `LinksSection.jsx` |
+| Google Maps — Coco Bambu Meireles | `MAPS_URL` | `LocationSection.jsx` |
+
+---
+
+## Avisos e observações (DetailsSection)
+
+- Traje: Sport Fino
+- Convidadas não devem usar branco no dia da cerimônia
+- Recepção às 17h15 — cerimônia inicia pontualmente às 17h00
 
 ---
 
@@ -100,4 +126,4 @@ npm run preview
 
 ## Deploy
 
-O projeto gera arquivos estáticos em `dist/` e pode ser hospedado em qualquer CDN ou serviço de hospedagem estática (Vercel, Netlify, GitHub Pages, etc.).
+O projeto gera arquivos estáticos em `dist/` e está configurado para Netlify via `netlify.toml` (build command, publish dir e redirect SPA).
