@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import fundoCapa from '../assets/fundo-capa-otimizado.png'
+import styles from './PhotoSection.module.css'
 
 export default function PhotoSection() {
   return (
@@ -38,18 +39,7 @@ export default function PhotoSection() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.0 }}
-        style={{
-          position: 'absolute',
-          bottom: '40px',
-          left: 0,
-          right: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '10px',
-          zIndex: 1,
-          pointerEvents: 'none',
-        }}
+        className={styles.cta}
       >
         <p
           style={{
