@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { MapPin, ExternalLink } from 'lucide-react'
 import fotoBg from '../assets/Foto- fundo-local.png'
 
-const MAPS_URL = '#'
+const MAPS_URL = 'https://www.google.com/maps/place/Coco+Bambu+-+Meireles/data=!4m2!3m1!1s0x0:0x6c3d0d84c386632?sa=X&ved=1t:2428&ictx=111'
 
 export default function LocationSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 })
