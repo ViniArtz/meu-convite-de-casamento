@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm install *)",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(Remove-Item \"c:\\\\Vinix Edits\\\\Vinix Edits\\\\01 - Trabalhos em Andamento\\\\Landing Page - My weeding\\\\Eloizy-Vinicius\\\\src\\\\components\\\\FloralDecoration.jsx\")"
     ]
   }
 }

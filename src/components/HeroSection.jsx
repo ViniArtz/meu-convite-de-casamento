@@ -1,47 +1,39 @@
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { useInView } from 'react-intersection-observer'
 import logoCasal from '../assets/SVG/Logo do Casal.svg'
 import styles from './HeroSection.module.css'
-
-const Ornament = () => (
-  <svg width="240" height="32" viewBox="0 0 240 32" fill="none">
-    <line x1="0" y1="16" x2="96" y2="16" stroke="#bea56c" strokeWidth="0.6" />
-    <circle cx="104" cy="16" r="3" fill="#bea56c" opacity="0.5" />
-    <circle cx="120" cy="16" r="6" fill="none" stroke="#bea56c" strokeWidth="1" />
-    <circle cx="120" cy="16" r="2" fill="#bea56c" />
-    <circle cx="136" cy="16" r="3" fill="#bea56c" opacity="0.5" />
-    <line x1="144" y1="16" x2="240" y2="16" stroke="#bea56c" strokeWidth="0.6" />
-  </svg>
-)
 
 const ease = [0.25, 0.46, 0.45, 0.94]
 
 export default function HeroSection() {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 })
+
   return (
     <section className={styles.section}>
-      <div className={styles.content}>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.1 }}
-          className={styles.logoWrapper}
-        >
-          <img src={logoCasal} alt="Logo E&V" className={styles.logoImg} />
-        </motion.div>
-
+      <div ref={ref} className={styles.content}>
         <motion.p
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, delay: 0.1 }}
           className={styles.tagline}
         >
           Com a bênção de Deus<br />e de seus pais
         </motion.p>
 
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 1.2, delay: 0.2 }}
+          className={styles.logoWrapper}
+        >
+          <img src={logoCasal} alt="Logo E&V" className={styles.logoImg} />
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, scale: 0.88, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.3, delay: 0.7, ease }}
+          animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
+          transition={{ duration: 1.3, delay: 0.4, ease }}
           className={styles.nameFirst}
         >
           Eloizy Alves
@@ -49,8 +41,8 @@ export default function HeroSection() {
 
         <motion.p
           initial={{ opacity: 0, scale: 0.7 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 1.2 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.7, delay: 0.8 }}
           className={styles.ampersand}
         >
           &amp;
@@ -58,8 +50,8 @@ export default function HeroSection() {
 
         <motion.h1
           initial={{ opacity: 0, scale: 0.88, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.3, delay: 1.5, ease }}
+          animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
+          transition={{ duration: 1.3, delay: 1.0, ease }}
           className={styles.nameLast}
         >
           Vinicius Teixeira
@@ -67,8 +59,8 @@ export default function HeroSection() {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.8 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, delay: 1.3 }}
           className={styles.tagline}
         >
           convidam você a celebrar<br />a união de suas vidas
@@ -76,8 +68,8 @@ export default function HeroSection() {
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 2.1 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.9, delay: 1.6 }}
           className={styles.dateBadge}
         >
           <div className={`${styles.dateDot} ${styles.dotTL}`} />
@@ -89,8 +81,8 @@ export default function HeroSection() {
 
         <motion.p
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 2.6 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 2.0 }}
           className={styles.subtitle}
         >
           Quinta-feira · 17h00 · Fortaleza, CE
@@ -98,8 +90,8 @@ export default function HeroSection() {
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 3.0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 1, delay: 2.3 }}
           className={styles.verse}
         >
           <div className={styles.verseLine} />
@@ -112,8 +104,8 @@ export default function HeroSection() {
 
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 3.2 }}
+        animate={inView ? { opacity: 1 } : {}}
+        transition={{ duration: 1, delay: 2.6 }}
         className={styles.scrollIndicator}
       >
         <div className={styles.scrollLine} />
